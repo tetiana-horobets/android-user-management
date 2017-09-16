@@ -18,9 +18,9 @@ public class UserListActivity extends AppCompatActivity {
 
         ArrayList<User> users = new ArrayList<>();
 
-        users.add(new User("Tania"));
-        users.add(new User("Alice"));
-        users.add(new User("Bob"));
+        users.add(new User(1, "Tania"));
+        users.add(new User(2, "Alice"));
+        users.add(new User(3, "Bob"));
 
         for (User user : users){
             TableRow row = new TableRow(this);

@@ -1,10 +1,21 @@
 package com.example.tetiana.user_management;
 
-public class User {
+class User {
+
+    private int id;
     private String name;
 
-    public User(String name) {
+    User(int id, String name) {
+        this.id = id;
         this.name = name;
+    }
+
+    int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 
     public String getName() {
