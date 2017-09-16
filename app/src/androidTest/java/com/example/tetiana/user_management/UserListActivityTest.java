@@ -20,8 +20,8 @@ public class UserListActivityTest {
 
     @Test
     public void showTheUsersInTheTable() {
-        onView(withText("Tania")).check(matches(isDisplayed()));
-        onView(withText("Alice")).check(matches(isDisplayed()));
-        onView(withText("Bob")).check(matches(isDisplayed()));
+        onView(withText("Mark")).check(matches(isDisplayed()));
+        onView(withText("John")).check(matches(isDisplayed()));
+        onView(withText("Anna")).check(matches(isDisplayed()));
     }
 }
