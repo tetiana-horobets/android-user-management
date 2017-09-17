@@ -1,14 +1,14 @@
 package com.example.tetiana.user_management;
 
-import android.content.res.AssetManager;
-import android.support.v7.app.AppCompatActivity;
+import android.content.Intent;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
+import android.view.View;
 import android.widget.TableLayout;
 import android.widget.TableRow;
 import android.widget.TextView;
 
 import java.io.InputStream;
-import java.util.ArrayList;
 
 public class UserListActivity extends AppCompatActivity {
 
@@ -20,12 +20,21 @@ public class UserListActivity extends AppCompatActivity {
 
         try {
             InputStream inputStream = getAssets().open("users.json");
-            UserRepository userRepository = new UserRepository(inputStream);
+            final UserRepository userRepository = new UserRepository(inputStream);
 
-            for (User user : userRepository.findAll()) {
+            for (final User user : userRepository.findAll()) {
                 TableRow row = new TableRow(this);
-                TextView textView = new TextView(this);
+                final TextView textView = new TextView(this);
                 textView.setText(user.getName());
+                textView.setOnClickListener(new View.OnClickListener() {
+
+                    @Override
+                    public void onClick(View v) {
+                        Intent intent = new Intent(UserListActivity.this, UserDetailsActivity.class);
+                        intent.putExtra("userId", user.getId());
+                        startActivity(intent);
+                    }
+                });
                 row.addView(textView);
                 table.addView(row);
             }
