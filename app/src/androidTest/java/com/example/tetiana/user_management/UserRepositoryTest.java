@@ -95,4 +95,24 @@ public class UserRepositoryTest {
         User user = userRepository.findUsersById(2);
         Assert.assertNull(user);
     }
+
+    @Test
+    public void findUsersByIdCount() throws IOException {
+        InputStream inputStream = getClass().getClassLoader().getResourceAsStream("test-user-details-count.json");
+        UserRepository userRepository = new UserRepository(inputStream);
+        User user = userRepository.findUsersById(2);
+        Assert.assertEquals(2, user.getId());
+        Assert.assertEquals("John", user.getName());
+        Assert.assertEquals("john@gmail.com", user.getEmail());
+        Assert.assertEquals(34, user.getAge());
+        Assert.assertEquals(false, user.isFemale());
+        Assert.assertEquals(5, user.getHobbies().size());
+        Assert.assertEquals("Swimming", user.getHobbies().get(0));
+        Assert.assertEquals("Driving", user.getHobbies().get(1));
+        Assert.assertEquals("Singing", user.getHobbies().get(2));
+        Assert.assertEquals("Playing piano", user.getHobbies().get(3));
+        Assert.assertEquals("making funny noises", user.getHobbies().get(4));
+        Assert.assertEquals("http://lorempixel.com/output/people-q-c-200-200-2.jpg", user.getImage());
+        Assert.assertEquals("http://lorempixel.com/output/animals-q-c-600-200-2.jpg", user.getBack());
+    }
 }
