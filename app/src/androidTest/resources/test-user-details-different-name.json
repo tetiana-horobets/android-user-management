@@ -1,0 +1,20 @@
+{
+  "text": [
+    {
+      "id": 2,
+      "name": "John",
+      "email": "john@gmail.com",
+      "age": 34,
+      "isFemale": false,
+      "hobbies": [
+        "Swimming",
+        "Driving",
+        "Singing",
+        "Playing piano",
+        "making funny noises"
+      ],
+      "image": "http://lorempixel.com/output/people-q-c-200-200-2.jpg",
+      "back": "http://lorempixel.com/output/animals-q-c-600-200-2.jpg"
+    }
+  ]
+}
