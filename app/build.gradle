@@ -42,4 +42,6 @@ dependencies {
     }
 
     testCompile group: 'org.mockito', name: 'mockito-all', version: '1.8.4'
+    compile 'com.squareup.picasso:picasso:2.5.2'
+
 }
