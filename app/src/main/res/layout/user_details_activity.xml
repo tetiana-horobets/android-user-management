@@ -33,25 +33,31 @@
 
     <ImageView
         android:id="@+id/user_detailed_image"
-        android:layout_width="200dp"
-        android:layout_height="200dp"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
         app:srcCompat="@mipmap/ic_launcher"
         android:contentDescription="No image" />
 
     <ImageView
         android:id="@+id/user_detailed_back"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
         app:srcCompat="@mipmap/ic_launcher"
         android:contentDescription="No image"
         />
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="50dp"
         android:orientation="horizontal"
         android:id="@+id/user_detailed_hobbies">
 
     </LinearLayout>
+
+    <Button
+        android:id="@+id/buttonSend"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Send" />
 
 </LinearLayout>
