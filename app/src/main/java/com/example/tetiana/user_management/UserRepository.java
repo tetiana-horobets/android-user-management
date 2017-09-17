@@ -70,6 +70,8 @@ class UserRepository {
                 users.add(readUser(reader));
             }
             reader.endArray();
+        } else {
+            reader.skipValue();
         }
         reader.endObject();
         return users;
