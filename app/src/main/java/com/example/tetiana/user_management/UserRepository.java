@@ -63,15 +63,17 @@ class UserRepository {
     private List<User> readUsers(JsonReader reader) throws IOException {
         List<User> users = new ArrayList<>();
         reader.beginObject();
-        String propertyName = reader.nextName();
-        if (propertyName.equals("users")) {
-            reader.beginArray();
-            while (reader.hasNext()) {
-                users.add(readUser(reader));
+        if (reader.hasNext()) {
+            String propertyName = reader.nextName();
+            if (propertyName.equals("users")) {
+                reader.beginArray();
+                while (reader.hasNext()) {
+                    users.add(readUser(reader));
+                }
+                reader.endArray();
+            } else {
+                reader.skipValue();
             }
-            reader.endArray();
-        } else {
-            reader.skipValue();
         }
         reader.endObject();
         return users;

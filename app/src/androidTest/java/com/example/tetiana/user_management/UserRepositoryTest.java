@@ -87,4 +87,12 @@ public class UserRepositoryTest {
         User user = userRepository.findUsersById(2);
         Assert.assertNull(user);
     }
+
+    @Test
+    public void findUsersByIdEmpty() throws IOException {
+        InputStream inputStream = getClass().getClassLoader().getResourceAsStream("test-user-details-empty.json");
+        UserRepository userRepository = new UserRepository(inputStream);
+        User user = userRepository.findUsersById(2);
+        Assert.assertNull(user);
+    }
 }
