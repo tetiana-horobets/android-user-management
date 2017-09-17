@@ -61,7 +61,7 @@ class User {
         this.age = age;
     }
 
-    public boolean isFemale() {
+    boolean isFemale() {
         return isFemale;
     }
 
@@ -92,4 +92,5 @@ class User {
     public void setBack(String back) {
         this.back = back;
     }
+
 }

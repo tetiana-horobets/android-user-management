@@ -31,5 +31,20 @@ public class UserListActivityTest {
     public void showTheUsersDetail() {
         onView(withText("John")).perform(click());
         onView(withId(R.id.user_detailed_name)).check(matches(withText("John")));
+        onView(withId(R.id.user_detailed_email)).check(matches(withText("john@gmail.com")));
+        onView(withId(R.id.user_detailed_age)).check(matches(withText("34")));
+        onView(withId(R.id.user_detailed_is_female)).check(matches(withText("Male")));
+        onView(withText("Swimming")).check(matches(isDisplayed()));
+        onView(withText("Driving")).check(matches(isDisplayed()));
+        onView(withText("Singing")).check(matches(isDisplayed()));
+        onView(withText("Playing piano")).check(matches(isDisplayed()));
+        onView(withText("making funny noises")).check(matches(isDisplayed()));
     }
+
+    @Test
+    public void showTheUsersIsFemale() {
+        onView(withText("Anna")).perform(click());
+        onView(withId(R.id.user_detailed_is_female)).check(matches(withText("Female")));
+    }
+
 }
