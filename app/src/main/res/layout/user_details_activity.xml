@@ -72,6 +72,7 @@
                 android:id="@+id/user_detailed_name"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
                 android:textSize="15sp" />
         </TableRow>
 
@@ -90,6 +91,7 @@
                 android:id="@+id/user_detailed_email"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
                 android:textSize="15sp" />
 
         </TableRow>
@@ -110,6 +112,7 @@
                 android:id="@+id/user_detailed_age"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
                 android:textSize="15sp" />
         </TableRow>
 
@@ -129,6 +132,7 @@
                 android:id="@+id/user_detailed_is_female"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
                 android:textSize="15sp" />
         </TableRow>
 
@@ -149,6 +153,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
+                android:layout_marginLeft="10dp"
                 android:textSize="15sp">
 
             </LinearLayout>
