@@ -16,9 +16,9 @@ public class UserRepositoryTest {
         UserRepository userRepository = new UserRepository(inputStream);
         List<User> users = userRepository.findAll();
         Assert.assertEquals(2, users.size());
-        Assert.assertEquals(1, users.get(0).getId());
+        Assert.assertEquals(1, users.get(0).getId().intValue());
         Assert.assertEquals("Mark", users.get(0).getName());
-        Assert.assertEquals(2, users.get(1).getId());
+        Assert.assertEquals(2, users.get(1).getId().intValue());
         Assert.assertEquals("Emilia", users.get(1).getName());
     }
 
@@ -36,7 +36,7 @@ public class UserRepositoryTest {
         UserRepository userRepository = new UserRepository(inputStream);
         List<User> users = userRepository.findAll();
         Assert.assertEquals(1, users.size());
-        Assert.assertEquals(2, users.get(0).getId());
+        Assert.assertEquals(2, users.get(0).getId().intValue());
         Assert.assertEquals("Emilia", users.get(0).getName());
     }
 
@@ -54,9 +54,9 @@ public class UserRepositoryTest {
         UserRepository userRepository = new UserRepository(inputStream);
         List<User> users = userRepository.findAll();
         Assert.assertEquals(2, users.size());
-        Assert.assertEquals(1, users.get(0).getId());
+        Assert.assertEquals(1, users.get(0).getId().intValue());
         Assert.assertEquals("Mark", users.get(0).getName());
-        Assert.assertEquals(2, users.get(1).getId());
+        Assert.assertEquals(2, users.get(1).getId().intValue());
         Assert.assertEquals("Emilia", users.get(1).getName());
     }
 
@@ -65,10 +65,10 @@ public class UserRepositoryTest {
         InputStream inputStream = getClass().getClassLoader().getResourceAsStream("test-user-details.json");
         UserRepository userRepository = new UserRepository(inputStream);
         User user = userRepository.findUsersById(2);
-        Assert.assertEquals(2, user.getId());
+        Assert.assertEquals(2, user.getId().intValue());
         Assert.assertEquals("John", user.getName());
         Assert.assertEquals("john@gmail.com", user.getEmail());
-        Assert.assertEquals(34, user.getAge());
+        Assert.assertEquals(34, user.getAge().intValue());
         Assert.assertEquals(false, user.isFemale());
         Assert.assertEquals(5, user.getHobbies().size());
         Assert.assertEquals("Swimming", user.getHobbies().get(0));
@@ -101,10 +101,10 @@ public class UserRepositoryTest {
         InputStream inputStream = getClass().getClassLoader().getResourceAsStream("test-user-details-count.json");
         UserRepository userRepository = new UserRepository(inputStream);
         User user = userRepository.findUsersById(2);
-        Assert.assertEquals(2, user.getId());
+        Assert.assertEquals(2, user.getId().intValue());
         Assert.assertEquals("John", user.getName());
         Assert.assertEquals("john@gmail.com", user.getEmail());
-        Assert.assertEquals(34, user.getAge());
+        Assert.assertEquals(34, user.getAge().intValue());
         Assert.assertEquals(false, user.isFemale());
         Assert.assertEquals(5, user.getHobbies().size());
         Assert.assertEquals("Swimming", user.getHobbies().get(0));
