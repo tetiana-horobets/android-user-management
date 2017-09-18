@@ -36,31 +36,54 @@ public class UserDetailsActivity extends AppCompatActivity {
             UserRepository userRepository = new UserRepository(inputStream);
             int userId = getIntent().getIntExtra("userId", -1);
             final User user =  userRepository.findUsersById(userId);
-            name.setText(user.getName());
-            email.setText(user.getEmail());
-            age.setText(String.valueOf(user.getAge()));
-            isFemale.setText(user.isFemale() ? "Female" : "Male");
 
-            for(String hobby: user.getHobbies()){
-                final TextView textView = new TextView(this);
-                textView.setText(hobby);
-                layoutHobby.addView(textView);
-            }
+            if(user != null) {
 
-            Picasso.with(this).load(user.getImage()).into(image);
-            Picasso.with(this).load(user.getBack()).into(back);
+                name.setText(user.getName() != null ? user.getName() : "N/A");
+                email.setText(user.getEmail() != null ? user.getEmail() : "N/A");
+                age.setText(user.getAge() != null ? String.valueOf(user.getAge()) : "N/A");
+                isFemale.setText(user.isFemale() != null ? user.isFemale() ? "Female" : "Male" : "N/A");
 
-            buttonSend.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    Intent sendEmail = new Intent(Intent.ACTION_SEND);
-
-                    sendEmail.putExtra(Intent.EXTRA_EMAIL, user.getEmail());
-                    sendEmail.setType("message/rfc822");
-
-                    startActivity(Intent.createChooser(sendEmail, "Choose an Email client"));
+                if(user.getHobbies() != null) {
+                    for (String hobby : user.getHobbies()) {
+                        final TextView textView = new TextView(this);
+                        textView.setText(hobby);
+                        layoutHobby.addView(textView);
+                    }
                 }
-            });
+
+                if(user.getImage() != null) {
+                    Picasso.with(this).load(user.getImage()).into(image);
+                }
+
+                if(user.getBack() != null) {
+                    Picasso.with(this).load(user.getBack()).into(back);
+                }
+
+                if(user.getEmail() != null) {
+                    buttonSend.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View v) {
+                            Intent sendEmail = new Intent(Intent.ACTION_SEND);
+
+                            sendEmail.putExtra(Intent.EXTRA_EMAIL, user.getEmail());
+                            sendEmail.setType("message/rfc822");
+
+                            startActivity(Intent.createChooser(sendEmail, "Choose an Email client"));
+                        }
+                    });
+                } else {
+                    buttonSend.setVisibility(View.INVISIBLE);
+                }
+
+            } else {
+                name.setText("User is not found");
+                email.setText("N/A");
+                age.setText("N/A");
+                isFemale.setText("N/A");
+
+                buttonSend.setVisibility(View.INVISIBLE);
+            }
         } catch (Exception e) {
             e.printStackTrace();
         }

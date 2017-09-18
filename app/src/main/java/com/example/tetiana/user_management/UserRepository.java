@@ -80,11 +80,11 @@ class UserRepository {
     }
 
     private User readUser(JsonReader reader) throws IOException {
-        int id = -1;
+        Integer id = null;
         String name = null;
         String email = null;
-        int age = -1;
-        Boolean isFemale = true;
+        Integer age = null;
+        Boolean isFemale = null;
         List<String> hobbies = null;
         String image = null;
         String back = null;

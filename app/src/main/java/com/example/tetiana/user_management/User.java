@@ -4,11 +4,11 @@ import java.util.List;
 
 class User {
 
-    private int id;
+    private Integer id;
     private String name;
     private String email;
-    private int age;
-    private boolean isFemale;
+    private Integer age;
+    private Boolean isFemale;
     private List<String> hobbies;
     private String image;
     private String back;
@@ -18,7 +18,7 @@ class User {
         this.name = name;
     }
 
-    public User(int id, String name, String email, int age, boolean isFemale, List<String> hobbies, String image, String back) {
+    public User(Integer id, String name, String email, Integer age, Boolean isFemale, List<String> hobbies, String image, String back) {
         this.id = id;
         this.name = name;
         this.email = email;
@@ -29,7 +29,7 @@ class User {
         this.back = back;
     }
 
-    int getId() {
+    Integer getId() {
         return id;
     }
 
@@ -53,7 +53,7 @@ class User {
         this.email = email;
     }
 
-    int getAge() {
+    Integer getAge() {
         return age;
     }
 
@@ -61,7 +61,7 @@ class User {
         this.age = age;
     }
 
-    boolean isFemale() {
+    Boolean isFemale() {
         return isFemale;
     }
 
