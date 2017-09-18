@@ -26,6 +26,8 @@ public class UserListActivity extends AppCompatActivity {
                 TableRow row = new TableRow(this);
                 final TextView textView = new TextView(this);
                 textView.setText(user.getName());
+                textView.setPadding(16, 2, 16, 1);
+                textView.setTextSize(18);
                 textView.setOnClickListener(new View.OnClickListener() {
 
                     @Override
@@ -36,6 +38,7 @@ public class UserListActivity extends AppCompatActivity {
                     }
                 });
                 row.addView(textView);
+                row.setBackgroundResource(R.drawable.row_borders);
                 table.addView(row);
             }
         } catch (Exception e) {
