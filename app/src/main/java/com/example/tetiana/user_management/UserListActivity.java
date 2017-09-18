@@ -26,7 +26,7 @@ public class UserListActivity extends AppCompatActivity {
                 TableRow row = new TableRow(this);
                 final TextView textView = new TextView(this);
                 textView.setText(user.getName());
-                textView.setPadding(16, 2, 16, 1);
+                textView.setPadding(20, 16, 16, 16);
                 textView.setTextSize(18);
                 textView.setOnClickListener(new View.OnClickListener() {
 
